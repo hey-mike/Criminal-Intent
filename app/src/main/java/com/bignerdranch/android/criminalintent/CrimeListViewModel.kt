@@ -1,23 +1,21 @@
 package com.bignerdranch.android.criminalintent
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
-import java.util.Date
-import java.util.UUID
+import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.launch
+
+private const val TAG = "CrimeListViewModel"
 
 class CrimeListViewModel : ViewModel() {
+    private val crimeRepository = CrimeRepository.get()
 
-    val crimes = mutableListOf<Crime>()
+    val crimes = crimeRepository.getCrimes()
 
     init {
-        for (i in 0 until 100) {
-            val crime = Crime(
-                id = UUID.randomUUID(),
-                title ="Crime #$i",
-                date = Date(),
-                isSolved = i % 2 == 0
-            )
-
-            crimes += crime
+        viewModelScope.launch {
+           
         }
     }
+
 }

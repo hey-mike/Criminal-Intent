@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    id("org.jetbrains.kotlin.kapt")
 }
 
 android {
@@ -67,6 +68,9 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
+    implementation(libs.androidx.room.common)
+    implementation(libs.androidx.room.ktx)
+    kapt(libs.androidx.room.compiler)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
