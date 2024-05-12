@@ -4,4 +4,4 @@
     android:id="@+id/crime_recycler_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CrimeListFragment" />
+    tools:listitem="@layout/list_item_crime" />
