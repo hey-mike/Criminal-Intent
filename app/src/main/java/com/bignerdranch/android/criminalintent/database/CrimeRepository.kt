@@ -22,7 +22,7 @@ private constructor(
         CrimeDatabase::class.java,
         DATABASE_NAME
     )
-        .createFromAsset(DATABASE_NAME)
+//        .createFromAsset(DATABASE_NAME)
         .fallbackToDestructiveMigration() //allows Room to recreate the database schema if the versions do not match or validation fails. Be cautious, as this will delete all existing data in the database.
         .build()
 
@@ -34,6 +34,10 @@ private constructor(
         coroutineScope.launch {
             database.crimeDao().updateCrime(crime)
         }
+    }
+
+    suspend fun addCrime(crime: Crime) {
+        database.crimeDao().addCrime(crime)
     }
 
 

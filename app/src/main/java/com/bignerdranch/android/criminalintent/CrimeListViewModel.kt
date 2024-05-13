@@ -11,6 +11,8 @@ import kotlinx.coroutines.launch
 private const val TAG = "CrimeListViewModel"
 
 class CrimeListViewModel : ViewModel() {
+
+
     private val crimeRepository = CrimeRepository.get()
 
     private val _crimes: MutableStateFlow<List<Crime>> = MutableStateFlow(emptyList())
@@ -25,4 +27,7 @@ class CrimeListViewModel : ViewModel() {
         }
     }
 
+    suspend fun addCrime(crime: Crime) {
+        crimeRepository.addCrime(crime)
+    }
 }
