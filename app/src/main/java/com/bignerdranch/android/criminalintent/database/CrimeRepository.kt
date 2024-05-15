@@ -21,7 +21,7 @@ private constructor(
         context.applicationContext,
         CrimeDatabase::class.java,
         DATABASE_NAME
-    ).addMigrations(migration_1_2).build()
+    ).addMigrations(migration_1_2, migration_2_3).build()
 //        .createFromAsset(DATABASE_NAME)
 //        .fallbackToDestructiveMigration() //allows Room to recreate the database schema if the versions do not match or validation fails. Be cautious, as this will delete all existing data in the database.
 
