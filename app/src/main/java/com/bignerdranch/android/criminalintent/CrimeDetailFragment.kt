@@ -177,7 +177,6 @@ class CrimeDetailFragment : Fragment() {
     }
 
     private fun canResolveIntent(intent: Intent): Boolean {
-//        intent.addCategory(Intent.CATEGORY_HOME)
         val packageManager: PackageManager = requireActivity().packageManager
         val resolvedActivity: ResolveInfo? =
             packageManager.resolveActivity(
